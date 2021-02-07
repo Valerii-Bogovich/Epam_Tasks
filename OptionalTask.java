@@ -65,13 +65,15 @@ public class OptionalTask {
 		int length = 0;
 		int intPartOfNumber = (int)number;
 		double fractionalPartOfNumber = number - intPartOfNumber;
+		int intPartOfFractionalPartOfNumber = (int)fractionalPartOfNumber;
+		double fractionalPartOfFractionalPartOfNumber = fractionalPartOfNumber - intPartOfFractionalPartOfNumber;
 		
 		while(Math.abs(intPartOfNumber) != 0) {
 			intPartOfNumber /= 10;
 			length++;
 		}
 		
-		while(Math.abs(fractionalPartOfNumber % 10) <= 1) {
+		while((Math.abs(fractionalPartOfFractionalPartOfNumber) != 0) {
 			fractionalPartOfNumber *= 10;
 			length++;
 			
